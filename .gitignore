@@ -1,0 +1,46 @@
+# ──────────────────────────────────────────────
+#  MorseLink — .gitignore
+# ──────────────────────────────────────────────
+
+# PlatformIO
+.pio/
+.pioenvs/
+.piolibdeps/
+.clang_complete
+.gcc-flags.json
+
+# Arduino IDE
+*.elf
+*.bin
+*.hex
+*.map
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Linux
+*~
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# JetBrains
+.idea/
+*.iml
+
+# Build artifacts
+build/
+dist/
+out/
+
+# Secrets — never commit real keys!
+secrets.h
+*.key
+*.pem

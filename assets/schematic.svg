@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" width="900" height="560"
+     style="background:#0d1117; font-family:'Courier New',monospace;">
+
+  <!-- ── Background grid ───────────────────────────────────────────────── -->
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#1e2a3a" stroke-width="0.5"/>
+    </pattern>
+    <!-- Wire colour -->
+    <style>
+      .wire  { stroke:#58a6ff; stroke-width:2; fill:none; stroke-linecap:round }
+      .wire-p{ stroke:#ff7b72; stroke-width:2; fill:none; stroke-linecap:round }
+      .wire-g{ stroke:#3fb950; stroke-width:2; fill:none; stroke-linecap:round }
+      .label { fill:#e6edf3; font-size:11px }
+      .pin   { fill:#58a6ff; font-size:10px }
+      .title { fill:#f0f6fc; font-size:14px; font-weight:bold }
+      .sub   { fill:#8b949e; font-size:11px }
+      .comp  { fill:#161b22; stroke:#30363d; stroke-width:1.5 }
+      .comp-h{ fill:#21262d }
+    </style>
+  </defs>
+  <rect width="900" height="560" fill="#0d1117"/>
+  <rect width="900" height="560" fill="url(#grid)"/>
+
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!--  ESP32 DevKit  (centre)                                            -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <rect x="330" y="120" width="240" height="310" rx="6" class="comp"/>
+  <rect x="330" y="120" width="240" height="28"  rx="6" class="comp-h"/>
+  <text x="450" y="139" text-anchor="middle" class="title">ESP32 DevKit V1</text>
+
+  <!-- Left-side GPIO labels -->
+  <text x="336" y="175" class="pin">3V3</text>
+  <text x="336" y="200" class="pin">GND</text>
+  <text x="336" y="225" class="pin">GPIO 21</text>
+  <text x="336" y="250" class="pin">GPIO 22</text>
+  <text x="336" y="275" class="pin">GPIO 25</text>
+
+  <!-- Right-side GPIO labels -->
+  <text x="490" y="175" class="pin">GPIO 12</text>
+  <text x="490" y="200" class="pin">GPIO 14</text>
+  <text x="490" y="225" class="pin">GPIO 27</text>
+  <text x="490" y="250" class="pin">GPIO 26</text>
+  <text x="490" y="275" class="pin">GPIO  2</text>
+
+  <!-- Pin dots — left -->
+  <circle cx="330" cy="171" r="4" fill="#58a6ff"/>
+  <circle cx="330" cy="196" r="4" fill="#3fb950"/>
+  <circle cx="330" cy="221" r="4" fill="#58a6ff"/>
+  <circle cx="330" cy="246" r="4" fill="#58a6ff"/>
+  <circle cx="330" cy="271" r="4" fill="#f0883e"/>
+
+  <!-- Pin dots — right -->
+  <circle cx="570" cy="171" r="4" fill="#58a6ff"/>
+  <circle cx="570" cy="196" r="4" fill="#58a6ff"/>
+  <circle cx="570" cy="221" r="4" fill="#58a6ff"/>
+  <circle cx="570" cy="246" r="4" fill="#58a6ff"/>
+  <circle cx="570" cy="271" r="4" fill="#e3b341"/>
+
+  <!-- Chip graphic inside ESP32 box -->
+  <rect x="385" y="165" width="130" height="90" rx="4" fill="#1c2128" stroke="#30363d" stroke-width="1"/>
+  <text x="450" y="205" text-anchor="middle" fill="#58a6ff" font-size="13" font-weight="bold">Xtensa LX6</text>
+  <text x="450" y="222" text-anchor="middle" fill="#8b949e" font-size="10">240 MHz · 520 KB SRAM</text>
+  <text x="450" y="237" text-anchor="middle" fill="#8b949e" font-size="10">Wi-Fi / BT · mbedTLS</text>
+
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!--  SSD1306 OLED  (left)                                              -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <rect x="60" y="130" width="160" height="110" rx="6" class="comp"/>
+  <rect x="60" y="130" width="160" height="22"  rx="6" class="comp-h"/>
+  <text x="140" y="145" text-anchor="middle" class="title">SSD1306 OLED</text>
+  <text x="140" y="162" text-anchor="middle" class="sub">128×64 I²C</text>
+
+  <!-- OLED screen mock -->
+  <rect x="75" y="168" width="130" height="58" rx="2" fill="#0a3d62" stroke="#58a6ff" stroke-width="1"/>
+  <text x="140" y="188" text-anchor="middle" fill="#58a6ff" font-size="9">MorseLink-A</text>
+  <text x="140" y="202" text-anchor="middle" fill="#58a6ff" font-size="8">· − · ·</text>
+  <text x="140" y="216" text-anchor="middle" fill="#3fb950" font-size="8">MSG: HELLO</text>
+
+  <!-- OLED pin row -->
+  <text x="75"  y="248" class="pin">GND</text>
+  <text x="103" y="248" class="pin">VCC</text>
+  <text x="130" y="248" class="pin">SCL</text>
+  <text x="157" y="248" class="pin">SDA</text>
+  <circle cx="82"  cy="238" r="3" fill="#3fb950"/>
+  <circle cx="110" cy="238" r="3" fill="#ff7b72"/>
+  <circle cx="138" cy="238" r="3" fill="#58a6ff"/>
+  <circle cx="165" cy="238" r="3" fill="#58a6ff"/>
+
+  <!-- ── OLED wires ─────────────────────────────── -->
+  <!-- 3V3 (red) -->
+  <path class="wire-p" d="M 110,238 L 110,270 L 290,270 L 290,171 L 330,171"/>
+  <!-- GND (green) -->
+  <path class="wire-g" d="M 82,238 L 82,280 L 295,280 L 295,196 L 330,196"/>
+  <!-- SCL (blue) -->
+  <path class="wire" d="M 138,238 L 138,295 L 300,295 L 300,246 L 330,246"/>
+  <!-- SDA (blue) -->
+  <path class="wire" d="M 165,238 L 165,305 L 305,305 L 305,221 L 330,221"/>
+
+  <!-- Wire labels -->
+  <text x="200" y="263" fill="#ff7b72" font-size="9">3V3</text>
+  <text x="200" y="278" fill="#3fb950" font-size="9">GND</text>
+  <text x="200" y="293" fill="#58a6ff" font-size="9">SCL</text>
+  <text x="200" y="309" fill="#58a6ff" font-size="9">SDA</text>
+
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!--  Push Buttons (right side)                                         -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+
+  <!-- Button backdrop -->
+  <rect x="680" y="120" width="180" height="200" rx="6" class="comp"/>
+  <rect x="680" y="120" width="180" height="22"  rx="6" class="comp-h"/>
+  <text x="770" y="135" text-anchor="middle" class="title">Push Buttons</text>
+
+  <!-- DOT -->
+  <rect x="695" y="148" width="60" height="26" rx="4" fill="#21262d" stroke="#58a6ff" stroke-width="1.5"/>
+  <text x="725" y="165" text-anchor="middle" fill="#58a6ff" font-size="11" font-weight="bold">DOT  ·</text>
+  <circle cx="800" cy="161" r="4" fill="#58a6ff"/>
+
+  <!-- DASH -->
+  <rect x="695" y="184" width="60" height="26" rx="4" fill="#21262d" stroke="#58a6ff" stroke-width="1.5"/>
+  <text x="725" y="201" text-anchor="middle" fill="#58a6ff" font-size="11" font-weight="bold">DASH −</text>
+  <circle cx="800" cy="197" r="4" fill="#58a6ff"/>
+
+  <!-- SEND -->
+  <rect x="695" y="220" width="60" height="26" rx="4" fill="#21262d" stroke="#3fb950" stroke-width="1.5"/>
+  <text x="725" y="237" text-anchor="middle" fill="#3fb950" font-size="11" font-weight="bold">SEND ▶</text>
+  <circle cx="800" cy="233" r="4" fill="#3fb950"/>
+
+  <!-- CLEAR -->
+  <rect x="695" y="256" width="60" height="26" rx="4" fill="#21262d" stroke="#ff7b72" stroke-width="1.5"/>
+  <text x="725" y="273" text-anchor="middle" fill="#ff7b72" font-size="11" font-weight="bold">CLEAR ✕</text>
+  <circle cx="800" cy="269" r="4" fill="#ff7b72"/>
+
+  <!-- GND rail for buttons -->
+  <line x1="835" y1="148" x2="835" y2="295" stroke="#3fb950" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="840" y="228" fill="#3fb950" font-size="9">GND</text>
+  <line x1="800" y1="161" x2="835" y2="161" stroke="#3fb950" stroke-width="1.5"/>
+  <line x1="800" y1="197" x2="835" y2="197" stroke="#3fb950" stroke-width="1.5"/>
+  <line x1="800" y1="233" x2="835" y2="233" stroke="#3fb950" stroke-width="1.5"/>
+  <line x1="800" y1="269" x2="835" y2="269" stroke="#3fb950" stroke-width="1.5"/>
+
+  <!-- Button → ESP32 wires -->
+  <path class="wire" d="M 680,161 L 620,161 L 620,171 L 570,171"/>
+  <path class="wire" d="M 680,197 L 625,197 L 625,196 L 570,196"/>
+  <path class="wire" d="M 680,233 L 630,233 L 630,221 L 570,221"/>
+  <path class="wire" d="M 680,269 L 635,269 L 635,246 L 570,246"/>
+
+  <!-- GPIO labels on wires -->
+  <text x="595" y="158" fill="#58a6ff" font-size="9">G12</text>
+  <text x="595" y="193" fill="#58a6ff" font-size="9">G14</text>
+  <text x="595" y="229" fill="#58a6ff" font-size="9">G27</text>
+  <text x="595" y="265" fill="#58a6ff" font-size="9">G26</text>
+
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!--  Passive Buzzer  (bottom)                                          -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <rect x="330" y="480" width="120" height="56" rx="6" class="comp"/>
+  <rect x="330" y="480" width="120" height="20" rx="6" class="comp-h"/>
+  <text x="390" y="493" text-anchor="middle" class="title">Buzzer</text>
+  <circle cx="390" cy="518" r="14" fill="#21262d" stroke="#f0883e" stroke-width="1.5"/>
+  <text x="390" y="522" text-anchor="middle" fill="#f0883e" font-size="10">♪</text>
+  <text x="365" y="530" fill="#8b949e" font-size="9">+    −</text>
+
+  <!-- Buzzer wires -->
+  <path d="M 390,480 L 390,450 L 430,450 L 430,271 L 330,271" stroke="#f0883e" stroke-width="2" fill="none"/>
+  <text x="440" y="380" fill="#f0883e" font-size="9">G25</text>
+  <!-- 100Ω resistor symbol -->
+  <rect x="395" y="445" width="30" height="10" rx="2" fill="#21262d" stroke="#f0883e" stroke-width="1"/>
+  <text x="410" y="454" text-anchor="middle" fill="#f0883e" font-size="8">100Ω</text>
+
+  <!-- Buzzer GND -->
+  <line x1="375" y1="534" x2="375" y2="545" stroke="#3fb950" stroke-width="2"/>
+  <line x1="360" y1="545" x2="390" y2="545" stroke="#3fb950" stroke-width="2"/>
+  <line x1="364" y1="549" x2="386" y2="549" stroke="#3fb950" stroke-width="1.5"/>
+  <line x1="368" y1="553" x2="382" y2="553" stroke="#3fb950" stroke-width="1"/>
+
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!--  Title / Legend                                                    -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <rect x="10" y="460" width="290" height="80" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="20" y="476" class="title" font-size="12">Wire Legend</text>
+  <line x1="20" y1="485" x2="50" y2="485" stroke="#ff7b72" stroke-width="2"/>
+  <text x="55" y="488" class="sub">Power (3.3 V / VCC)</text>
+  <line x1="20" y1="500" x2="50" y2="500" stroke="#3fb950" stroke-width="2"/>
+  <text x="55" y="503" class="sub">Ground (GND)</text>
+  <line x1="20" y1="515" x2="50" y2="515" stroke="#58a6ff" stroke-width="2"/>
+  <text x="55" y="518" class="sub">Signal / Data / GPIO</text>
+  <line x1="20" y1="530" x2="50" y2="530" stroke="#f0883e" stroke-width="2"/>
+  <text x="55" y="533" class="sub">Buzzer / optional</text>
+
+  <!-- Project title -->
+  <text x="450" y="50" text-anchor="middle" fill="#f0f6fc" font-size="20" font-weight="bold">MorseLink — ESP32 Schematic</text>
+  <text x="450" y="70" text-anchor="middle" fill="#8b949e" font-size="12">Bidirectional Encrypted Morse Code Transceiver · ESP-NOW · AES-128</text>
+  <text x="450" y="90" text-anchor="middle" fill="#30363d" font-size="10">github.com/faysal-shah/bidirectional-morse-code-transceiver-</text>
+</svg>
