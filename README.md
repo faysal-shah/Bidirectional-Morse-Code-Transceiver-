@@ -320,7 +320,6 @@ Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for full text.
 ## 👤 Author
 
 **Faysal Shah** — [faysal-shah](https://github.com/faysal-shah)  
-*GDP Pakistan*
 
 ---
 
